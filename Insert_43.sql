@@ -78,8 +78,49 @@ INSERT INTO `packagingtype` (`PackagingTypeID`, `Description`) VALUES
 ('PPP', 'Plastic bottle with polyethylene cap (pack of 6)'),
 ('PPS', 'Plastic bottle with polyethylene cap (single)');
 
+
+-- Big Boi
+INSERT INTO `product` (`ProductNo`, `Name`, `Description`, `ProdTypeID`, `SrcTypeID`, `PackTypeID`, `Ingredients`, `Amount`, `Price`) VALUES
+(1, 'Akuna Springs', 'Mineral-rich spring water', 'WSP', 1, 'GOS', 'Spring water, lightly carbonated', '600ml', 4.99),
+(2, 'Akuna Springs', 'Mineral-rich spring water', 'WST', 4, 'GOS', 'Spring water', '600ml', 4.99),
+(3, 'Akuna Springs', 'Mineral-rich spring water', 'WSP', 5, 'GRS', 'Spring water, lightly carbonated', '600ml', 4.49),
+(4, 'Akuna Springs', 'Mineral-rich spring water', 'WST', 1, 'GRS', 'Spring water', '600ml', 4.49),
+(5, 'Akuna Springs', 'Mineral-rich spring water', 'WST', 4, 'PPS', 'Spring water', '600ml', 3.49),
+(6, 'Akuna Springs', 'Mineral-rich spring water', 'WSP', 1, 'GOP', 'Spring water, lightly carbonated', '3,600ml', 28.99),
+(7, 'Akuna Springs', 'Mineral-rich spring water', 'WST', 4, 'GOP', 'Spring water', '3,600ml', 28.99),
+(8, 'Akuna Springs', 'Mineral-rich spring water', 'WSP', 5, 'GRP', 'Spring water, lightly carbonated', '3,600ml', 24.49),
+(9, 'Akuna Springs', 'Mineral-rich spring water', 'WST', 1, 'GRP', 'Spring water', '3,600ml', 24.49),
+(10, 'Akuna Springs', 'Mineral-rich spring water', 'WST', 4, 'PPP', 'Spring water', '3,600ml', 18.49),
+(11, 'Akuna Blue', 'Premium spring water', 'WSP', 1, 'GOS', 'Spring water, lightly carbonated', '600ml', 5.99),
+(12, 'Akuna Blue', 'Premium spring water', 'WST', 4, 'GOS', 'Spring water', '600ml', 5.99),
+(13, 'Akuna Blue', 'Premium spring water', 'WSP', 5, 'GRS', 'Spring water, lightly carbonated', '600ml', 5.49),
+(14, 'Akuna Blue', 'Premium spring water', 'WST', 1, 'GRS', 'Spring water', '600ml', 5.49),
+(15, 'Akuna Blue', 'Premium spring water', 'WST', 4, 'PPS', 'Spring water', '600ml', 4.49),
+(16, 'Akuna Blue', 'Premium spring water', 'WSP', 1, 'GOP', 'Spring water, lightly carbonated', '3,600ml', 34.99),
+(17, 'Akuna Blue', 'Premium spring water', 'WST', 4, 'GOP', 'Spring water', '3,600ml', 34.99),
+(18, 'Akuna Blue', 'Premium spring water', 'WSP', 5, 'GRP', 'Spring water, lightly carbonated', '3,600ml', 30.49),
+(19, 'Akuna Blue', 'Premium spring water', 'WST', 1, 'GRP', 'Spring water', '3,600ml', 30.49),
+(20, 'Akuna Blue', 'Premium spring water', 'WST', 4, 'PPP', 'Spring water', '3,600ml', 25.49),
+(21, 'Kakadu An-marabula Bellini', 'Native Peach Bellini, non-alcoholic spirit alternative ', 'SNT', 2, 'GOS', 'Native peach nectar, botanical extracts, dealcoholized wine, natural flavours, colours, sparkling water, citric acid, vegetable glycerine, potassium sorbate and sugar', '750ml', 10.99),
+(22, 'Kakadu An-marabula Bellini', 'Native Peach Bellini, non-alcoholic spirit alternative ', 'SNT', 2, 'GOP', 'Native peach nectar, botanical extracts, dealcoholized wine, natural flavours, colours, sparkling water, citric acid, vegetable glycerine, potassium sorbate and sugar', '4,500ml', 61.99),
+(23, 'Kakadu Kitchen x OzHarvest Conscious Dri', 'Conscious Drink, non-alcoholic wine alternative', 'WNA', 3, 'GOS', 'Ethically sourced: filtered water, blueberry juice, lemongrass, saltbush, pepper berry, vinegar, botanical extracts, natural flavours, agave, citric acid, and potassium sorbate', '750ml', 18.49),
+(24, 'Kakadu Kitchen x OzHarvest Conscious Dri', 'Conscious Drink, non-alcoholic wine alternative', 'WNC', 3, 'GOS', 'Ethically sourced: filtered water, blueberry juice, lemongrass, saltbush, pepper berry, vinegar, botanical extracts, natural flavours, agave, citric acid, potassium sorbate, and lightly carbonated', '750ml', 18.99),
+(25, 'Kakadu Kitchen x OzHarvest Conscious Dri', 'Conscious Drink, non-alcoholic wine alternative', 'WNA', 3, 'GOP', 'Ethically sourced: filtered water, blueberry juice, lemongrass, saltbush, pepper berry, vinegar, botanical extracts, natural flavours, agave, citric acid, and potassium sorbate', '4,500ml', 110.49),
+(26, 'Kakadu Kitchen x OzHarvest Conscious Dri', 'Conscious Drink, non-alcoholic wine alternative', 'WNC', 3, 'GOP', 'Ethically sourced: filtered water, blueberry juice, lemongrass, saltbush, pepper berry, vinegar, botanical extracts, natural flavours, agave, citric acid, potassium sorbate, and lightly carbonated', '4,500ml', 113.99),
+(27, 'ALTD x Kakadu Kaboh (Green Ant) G&T', 'Ready-to-drink (RTD) beverage', 'SLT', 2, 'GRS', 'Distilled juniper, handcrafted bitters, black pepper, green ants, botanical extracts, natural flavours, citric acid, vegetable glycerine, and potassium sorbate', '600ml', 39.99),
+(28, 'ALTD x Kakadu Kaboh (Green Ant) G&T', 'Ready-to-drink (RTD) beverage', 'SLP', 2, 'GRS', 'Distilled juniper, handcrafted bitters, black pepper, green ants, botanical extracts, natural flavours, citric acid, vegetable glycerine, and potassium sorbate', '750ml', 45.99),
+(29, 'ALTD x Kakadu Kaboh (Green Ant) G&T', 'Ready-to-drink (RTD) beverage', 'SLC', 2, 'GRS', 'Distilled juniper, handcrafted bitters, black pepper, green ants, botanical extracts, natural flavours, citric acid, vegetable glycerine, and potassium sorbate', '500ml', 35.99),
+(30, 'ALTD x Kakadu Kaboh (Green Ant) G&T', 'Ready-to-drink (RTD) beverage', 'SLT', 2, 'GOS', 'Distilled juniper, handcrafted bitters, black pepper, green ants, botanical extracts, natural flavours, citric acid, vegetable glycerine, native sugar cane \"djilidjilih\", and potassium sorbate', '600ml', 39.99),
+(31, 'ALTD x Kakadu Kaboh (Green Ant) G&T', 'Ready-to-drink (RTD) beverage', 'SLP', 2, 'GOS', 'Distilled juniper, handcrafted bitters, black pepper, green ants, botanical extracts, natural flavours, citric acid, vegetable glycerine, native sugar cane \"djilidjilih\", and potassium sorbate', '750ml', 45.99),
+(32, 'ALTD x Kakadu Kaboh (Green Ant) G&T', 'Ready-to-drink (RTD) beverage', 'SLC', 2, 'GOS', 'Distilled juniper, handcrafted bitters, black pepper, green ants, botanical extracts, natural flavours, citric acid, vegetable glycerine, native sugar cane \"djilidjilih\", and potassium sorbate', '500ml', 35.99),
+(33, 'Kakadu An-marabula Bellini', 'Native Peach Bellini, non-alcoholic spirit alternative ', 'SNP', 2, 'GOS', 'Native peach nectar, botanical extracts, dealcoholized wine, natural flavours, colours, sparkling water, citric acid, vegetable glycerine, potassium sorbate and sugar', '750ml', 12.99),
+(34, 'Kakadu An-marabula Bellini', 'Native Peach Bellini, non-alcoholic spirit alternative ', 'SNP', 2, 'GOP', 'Native peach nectar, botanical extracts, dealcoholized wine, natural flavours, colours, sparkling water, citric acid, vegetable glycerine, potassium sorbate and sugar', '4,500ml', 66.99);
+
+
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
