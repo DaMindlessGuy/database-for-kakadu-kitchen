@@ -87,7 +87,7 @@ CREATE TABLE `partnership` (
 CREATE TABLE `partnershipproduct` (
   `PartnershipProductID` int(11) NOT NULL,
   `ProductNo` int(11) NOT NULL,
-  `PartnershipID` int(11) NOT NULL,
+  `PartnershipID` int(11) ,
   `TotalUnitAgreed` int(11) NOT NULL,
   `TotalUnitDelivered` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
