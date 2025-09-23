@@ -2,7 +2,8 @@
 
 1. Take a read of Insert\_example.sql to give you an example of what you need to do. 
 2. You need to open up the .docx file in this repo and create a file inside of this repo called Insert\_43.sql and insert the data that you see from the .docx and make sure you look inside of the Create\_43.sql for the specifications. 
-3. Once you complete this task, you can open up something like [GitHub Desktop](https://desktop.github.com/download/) or [Visual Studio Code](https://code.visualstudio.com/download) to help you upload code to GitHub. Worst comes to worst, if you can't upload the Insert_43.sql, just send it to me and I'll upload it. 
+3. When exporting the data to upload. Under Database: `kitchen_43` -> `Export` -> click `Go`
+4. Once you complete this , you can open up something like [GitHub Desktop](https://desktop.github.com/download/) or [Visual Studio Code](https://code.visualstudio.com/download) to help you upload code to GitHub. Worst comes to worst, if you can't upload the Insert_43.sql, just send it to me and I'll upload it. 
 
 
 I will also upload these instructions for uploading code to GitHub that I wrote for another class: 
