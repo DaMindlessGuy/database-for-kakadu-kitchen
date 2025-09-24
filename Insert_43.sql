@@ -115,7 +115,7 @@ INSERT INTO `product` (`ProductNo`, `Name`, `Description`, `ProdTypeID`, `SrcTyp
 (33, 'Kakadu An-marabula Bellini', 'Native Peach Bellini, non-alcoholic spirit alternative ', 'SNP', 2, 'GOS', 'Native peach nectar, botanical extracts, dealcoholized wine, natural flavours, colours, sparkling water, citric acid, vegetable glycerine, potassium sorbate and sugar', '750ml', 12.99),
 (34, 'Kakadu An-marabula Bellini', 'Native Peach Bellini, non-alcoholic spirit alternative ', 'SNP', 2, 'GOP', 'Native peach nectar, botanical extracts, dealcoholized wine, natural flavours, colours, sparkling water, citric acid, vegetable glycerine, potassium sorbate and sugar', '4,500ml', 66.99);
 
-INSERT INTO `partnershipproduct` (`PartnershipProductID`, `ProductNo`, `PartnerID`, `TotalUnitAgreed`, `TotalUnitDelivered`) VALUES
+INSERT INTO `partnershipproduct` (`PartnershipProductID`, `ProductNo`, `PartnershipID`, `TotalUnitAgreed`, `TotalUnitDelivered`) VALUES
 -- ('PartnershipProductID', 'ProductNo', 'PartnerID', 'TotalUnitAgreed', 'TotalUnitDelivered'),
 -- ('', '', '', '', ''),
 (1 , 1,  1,    100000.00, 33335),
@@ -173,4 +173,5 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
 
