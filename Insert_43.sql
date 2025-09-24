@@ -166,6 +166,7 @@ INSERT INTO `partnershipproduct` (`PartnershipProductID`, `ProductNo`, `PartnerI
 (46, 34, 2,    15000.00,  0),
 (47, 16, NULL, 5000.00,   0),
 (48, 17, NULL, 2000.00,   0);
+--
 
 
 COMMIT;
