@@ -78,7 +78,6 @@ INSERT INTO `packagingtype` (`PackagingTypeID`, `Description`) VALUES
 ('PPP', 'Plastic bottle with polyethylene cap (pack of 6)'),
 ('PPS', 'Plastic bottle with polyethylene cap (single)');
 
-
 -- Big Boi
 INSERT INTO `product` (`ProductNo`, `Name`, `Description`, `ProdTypeID`, `SrcTypeID`, `PackTypeID`, `Ingredients`, `Amount`, `Price`) VALUES
 (1, 'Akuna Springs', 'Mineral-rich spring water', 'WSP', 1, 'GOS', 'Spring water, lightly carbonated', '600ml', 4.99),
@@ -116,6 +115,57 @@ INSERT INTO `product` (`ProductNo`, `Name`, `Description`, `ProdTypeID`, `SrcTyp
 (33, 'Kakadu An-marabula Bellini', 'Native Peach Bellini, non-alcoholic spirit alternative ', 'SNP', 2, 'GOS', 'Native peach nectar, botanical extracts, dealcoholized wine, natural flavours, colours, sparkling water, citric acid, vegetable glycerine, potassium sorbate and sugar', '750ml', 12.99),
 (34, 'Kakadu An-marabula Bellini', 'Native Peach Bellini, non-alcoholic spirit alternative ', 'SNP', 2, 'GOP', 'Native peach nectar, botanical extracts, dealcoholized wine, natural flavours, colours, sparkling water, citric acid, vegetable glycerine, potassium sorbate and sugar', '4,500ml', 66.99);
 
+INSERT INTO `partnershipproduct` (`PartnershipProductID`, `ProductNo`, `PartnerID`, `TotalUnitAgreed`, `TotalUnitDelivered`) VALUES
+-- ('PartnershipProductID', 'ProductNo', 'PartnerID', 'TotalUnitAgreed', 'TotalUnitDelivered'),
+-- ('', '', '', '', ''),
+('1' , '1',  '1',  '100000.00', '33335'),
+('2' , '2',  '1',  '100000.00', '24444'),
+('3' , '3',  '1',  '130000.00', '24000'),
+('4' , '4',  '1',  '240000.00', '36000'),
+('5' , '5',  '1',  '134000.00', '34000'),
+('6' , '6',  '1',  '50000.00',  '4000'),
+('7' , '7',  '1',  '20000.00',  '6000'),
+('8' , '8',  '1',  '30000.00',  '4000'),
+('9' , '9',  '1',  '37000.00',  '6000'),
+('10', '10', '1',  '48000.00',  '4000'),
+('11', '11', '1',  '100000.00', '33335'),
+('12', '12', '1',  '100000.00', '34444'),
+('13', '13', '1',  '130000.00', '44000'),
+('14', '14', '1',  '240000.00', '76000'),
+('15', '15', '1',  '134000.00', '44000'),
+('16', '16', '1',  '50000.00',  '5000'),
+('17', '17', '1',  '20000.00',  '6000'),
+('18', '18', '1',  '30000.00',  '5000'),
+('19', '19', '1',  '37000.00',  '6000'),
+('20', '20', '1',  '48000.00',  '5000'),
+('21', '9',  '2',  '18000.00',  '4000'),
+('22', '10', '2',  '30000.00',  '13335'),
+('23', '11', '3',  '110000.00', '34000'),
+('24', '12', '3',  '70000.00',  '15000'),
+('25', '21', '2',  '30000.00',  '10000'),
+('26', '22', '2',  '25000.00',  '8334'),
+('27', '23', '3',  '85000.00',  '5000'),
+('28', '24', '3',  '77000.00',  '6000'),
+('29', '25', '3',  '45000.00',  '5000'),
+('30', '26', '3',  '39000.00',  '10000'),
+('31', '23', '5',  '100000.00', '30000'),
+('32', '24', '5',  '100000.00', '30000'),
+('33', '25', '5',  '100000.00', '30000'),
+('34', '26', NULL, '100000.00', '30000'),
+('35', '1',  NULL, '15000.00',  '500'),
+('36', '2',  NULL, '25000.00',  '4000'),
+('37', '11', NULL, '35000.00',  '3000'),
+('38', '12', '2',  '22000.00',  '7456'),
+('39', '27', '2',  '5000.00',   '2000'),
+('40', '28', '2',  '6000.00',   '0'),
+('41', '29', '2',  '7000.00',   '0'),
+('42', '30', '2',  '8000.00',   '0'),
+('43', '31', '2',  '9000.00',   '0'),
+('44', '32', '2',  '10000.00',  '0'),
+('45', '33', '2',  '10000.00',  '0'),
+('46', '34', '2',  '15000.00',  '0'),
+('47', '16', NULL, '5000.00',   '0'),
+('48', '17', NULL, '2000.00',   '0');
 
 
 COMMIT;
