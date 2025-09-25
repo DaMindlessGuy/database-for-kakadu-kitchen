@@ -54,14 +54,14 @@ INSERT INTO `partnerpartnership` (`PartnerPartnershipID`, `PartnerID`, `Partners
 
 INSERT INTO `producttype` (`ProductTypeID`, `Description`) VALUES
 ('WSP', 'Water - sparkling '),
-('WST', 'Water - still');
+('WST', 'Water - still'),
 ('SNT', 'Spirit - non-alcoholic, still'),
 ('SNP', 'Spirit - non-alcoholic, sparkling water '),
 ('WNA', 'Wine - non-alcoholic'),
 ('WNC', 'Wine - non-alcoholic, carbonated '),
 ('SLT', 'Spirit - limited edition, still'),
 ('SLP', 'Spirit - limited edition, sparkling '),
-('SLC', 'Spirit - limited edition, carbonated'),
+('SLC', 'Spirit - limited edition, carbonated');
 
 INSERT INTO `sourcetype` (`SourceTypeID`, `Description`) VALUES
 (1, 'Palmerston Dolostone Aquifer'),
