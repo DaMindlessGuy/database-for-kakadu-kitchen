@@ -6,7 +6,18 @@
 -- Nhan will work from here
 -- 3. 
 
+SELECT DATE_FORMAT(StartDate, '%d-%m-%Y') AS partnership_date, CONCAT('$', FORMAT(TotalInvestment, 0)) AS total_investment  
+FROM partnership  
+ORDER BY StartDate ASC 
+LIMIT 1 OFFSET 1; 
+
 -- 4. 
+
+SELECT Name, COUNT(*) AS total_products 
+FROM product 
+GROUP BY Name 
+HAVING COUNT(*) > 3 
+ORDER BY total_products DESC; 
 
 -- Patrick will work from here
 -- 5. 
@@ -69,3 +80,4 @@ JOIN product
     ON partnershipproduct.ProductNo = product.ProductNo
 WHERE partner.Name = 'First Nations-owned company'
 ORDER BY partnershippartnership.PartnershipID, partnershipproduct.ProductNo;
+
