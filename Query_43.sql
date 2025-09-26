@@ -37,5 +37,18 @@ WHERE partnerpartnership.PartnershipID IN (
 ORDER BY partnerpartnership.PartnershipID, partner.PartnerID;
 
 -- 7.
- 
+
+SELECT partnershipproduct.ProductNo,
+    COUNT(DISTINCT partnershipproduct.PartnershipID) AS NumPartnerships,
+    SUM(partnershipproduct.TotalUnitAgreed) AS TotalUnitsAgreed,
+    SUM(partnershipproduct.TotalUnitDelivered) AS TotalUnitsDelivered
+FROM partnershipproduct
+JOIN partnerpartnership 
+    ON partnershipproduct.PartnershipID = partnerpartnership.PartnershipID
+JOIN partner 
+    ON partnerpartnership.PartnerID = partner.PartnerID
+WHERE partner.Name <> 'Kakadu Kitchen'
+GROUP BY partnershipproduct.ProductNo
+HAVING COUNT(DISTINCT partnershipproduct.PartnershipID) > 1;
+
 -- 8. 
