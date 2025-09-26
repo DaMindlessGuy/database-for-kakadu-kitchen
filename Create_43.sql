@@ -41,7 +41,7 @@ CREATE TABLE `packagingtype` (
 --
 
 CREATE TABLE `partner` (
-  `PartnerID` int(11) NOT NULL,
+  `PartnerID` int(11) NOT NULL, -- Auto-Incrementing
   `Name` varchar(50) NOT NULL,
   `TypeID` char(2) NOT NULL,
   `Phone` char(10) NOT NULL,
@@ -73,7 +73,7 @@ CREATE TABLE `partnerpartnership` (
 --
 
 CREATE TABLE `partnership` (
-  `PartnershipID` int(11) NOT NULL,
+  `PartnershipID` int(11) NOT NULL, --Auto-Incrementing
   `StartDate` date NOT NULL,
   `TotalInvestment` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
