@@ -40,8 +40,9 @@ CREATE TABLE `packagingtype` (
 -- Table structure for table `partner`
 --
 
+-- ParnterID is an Auto-Incrementing variable
 CREATE TABLE `partner` (
-  `PartnerID` int(11) NOT NULL, -- Auto-Incrementing
+  `PartnerID` int(11) NOT NULL, 
   `Name` varchar(50) NOT NULL,
   `TypeID` char(2) NOT NULL,
   `Phone` char(10) NOT NULL,
@@ -71,9 +72,9 @@ CREATE TABLE `partnerpartnership` (
 --
 -- Table structure for table `partnership`
 --
-
+-- PartnershipID is an Auto-Incrementing variable
 CREATE TABLE `partnership` (
-  `PartnershipID` int(11) NOT NULL, --Auto-Incrementing
+  `PartnershipID` int(11) NOT NULL, 
   `StartDate` date NOT NULL,
   `TotalInvestment` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
