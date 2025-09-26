@@ -10,14 +10,6 @@
 
 -- Patrick will work from here
 -- 5. 
-/* 
- * Find all products of limited editions which are not available in the market
- * yet. Show such __products, their types, unit amount and unit price__. Note if
- * there is no delivery of a particular product yet, the product is assumed to be
- * not available in the market. Also, the data in the ProductType table show
- * that there are currently 3 products of type limited editions
- * Important tables: partnershipproduct, product, producttype
-*/
 
 SELECT Name, ProductTypeID, Amount, Price
 FROM `partnershipproduct`
@@ -28,6 +20,21 @@ ON product.ProdTypeID = producttype.ProductTypeID
 WHERE TotalUnitDelivered = 0 and ProductTypeID = "SLC" or ProductTypeID = "SLP" or ProductTypeID = "SLT"
 
 -- 6. 
+
+SELECT partnerpartnership.PartnershipID, partner.PartnerID, partner.Name
+FROM `partnerpartnership`
+JOIN partner 
+ON partnerpartnership.PartnerID = partner.PartnerID
+WHERE partnerpartnership.PartnershipID IN (
+    SELECT partnerpartnership.PartnershipID
+    FROM partnerpartnership
+    JOIN partner 
+        ON partnerpartnership.PartnerID = partner.PartnerID
+    GROUP BY partnerpartnership.PartnershipID
+    HAVING SUM(partner.Name = 'Kakadu Kitchen') = 1
+       AND COUNT(DISTINCT partner.PartnerID) = 3
+)
+ORDER BY partnerpartnership.PartnershipID, partner.PartnerID;
 
 -- 7.
  
