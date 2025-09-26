@@ -52,3 +52,20 @@ GROUP BY partnershipproduct.ProductNo
 HAVING COUNT(DISTINCT partnershipproduct.PartnershipID) > 1;
 
 -- 8. 
+
+SELECT
+    partnerpartnership.PartnershipID,
+    partnershipproduct.ProductNo,
+    product.Name AS ProductName,
+    partnershipproduct.TotalUnitAgreed,
+    partnershipproduct.TotalUnitDelivered,
+    (partnershipproduct.TotalUnitDelivered * product.Price * partnerpartnership.PartnerSaleShare / 100) AS SaleShareDollar
+FROM partner
+JOIN partnerpartnership 
+    ON partner.PartnerID = partnerpartnership.PartnerID
+JOIN partnershipproduct 
+    ON partnerpartnership.PartnershipID = partnershipproduct.PartnershipID
+JOIN product 
+    ON partnershipproduct.ProductNo = product.ProductNo
+WHERE partner.Name = 'First Nations-owned company'
+ORDER BY partnershippartnership.PartnershipID, partnershipproduct.ProductNo;
