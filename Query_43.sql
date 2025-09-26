@@ -1,7 +1,24 @@
 -- Oliver will work from here
 -- 1. 
-
+SELECT Name, Phone, StreetNo, StreetName, City, State ,PostCode  FROM `partner` 
 -- 2. 
+SELECT 
+    pr.PartnerID,
+    pr.Name AS ProducerName,
+    p.ProductNo,
+    p.Name AS ProductName,
+    p.Description,
+    p.Amount,
+    p.Price
+FROM partner pr
+JOIN partnerpartnership ppn 
+    ON pr.PartnerID = ppn.PartnerID
+JOIN partnershipproduct ppp 
+    ON ppn.PartnershipID = ppp.PartnershipID
+JOIN product p 
+    ON p.ProductNo = ppp.ProductNo
+WHERE pr.TypeID LIKE 'P%'   -- selects 'PO' and 'PR'
+ORDER BY pr.Name, p.ProductNo;
 
 -- Nhan will work from here
 -- 3. 
