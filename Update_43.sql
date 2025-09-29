@@ -15,7 +15,7 @@ SET @partner_id = LAST_INSERT_ID();
 
 -- Step 3: Add the new partnership
 INSERT INTO `partnership` (`StartDate`, `TotalInvestment`) VALUES
-('2025-08-15', 345000.00);
+('2025-09-01', 345000.00);
 
 -- Capture PartnershipID
 SET @partnership_id = LAST_INSERT_ID();
@@ -31,7 +31,7 @@ SET @partner_id = (SELECT PartnerID FROM partner WHERE Name = 'Brisbane Fresh');
 
 -- Step 2: Capture the new PartnershipID (August 2025)
 SET @partnership_id = (SELECT PartnershipID FROM partnership 
-                       WHERE StartDate = '2025-08-15' AND TotalInvestment = 345000.00);
+                       WHERE StartDate = '2025-09-01' AND TotalInvestment = 345000.00);
 
 -- Step 3: Insert all four product variations into partnershipproduct for the new partnership
 INSERT INTO `partnershipproduct` (`ProductNo`, `PartnershipID`, `TotalUnitAgreed`, `TotalUnitDelivered`)
