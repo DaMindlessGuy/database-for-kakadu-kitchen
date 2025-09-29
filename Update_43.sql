@@ -36,10 +36,10 @@ SET @partnership_id = (SELECT PartnershipID FROM partnership
 -- Step 3: Insert all four product variations into partnershipproduct for the new partnership
 INSERT INTO `partnershipproduct` (`ProductNo`, `PartnershipID`, `TotalUnitAgreed`, `TotalUnitDelivered`)
 VALUES
-(21, @partnership_id, 30000, 0),  -- still, single bottle
-(22, @partnership_id, 20000, 0),  -- still, pack of 6
-(33, @partnership_id, 25000, 0),  -- sparkling, single bottle
-(34, @partnership_id, 15000, 0);  -- sparkling, pack of 6
+(21, @partnership_id, 0, 0),  -- still, single bottle
+(22, @partnership_id, 0, 0),  -- still, pack of 6
+(33, @partnership_id, 0, 0),  -- sparkling, single bottle
+(34, @partnership_id, 0, 0);  -- sparkling, pack of 6
 
 -- Task 3: 
 -- Step 1: Capture PartnerIDs
