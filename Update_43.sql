@@ -78,9 +78,15 @@ SET TotalUnitAgreed = 20000
 WHERE PartnershipID = @new_partnership_id
   AND ProductNo = 34;  -- sparkling, pack of 6
 
--- Optional: reset delivered units to 0 if this is a new production run
+-- Task 5: 
+-- Step 1: Capture the new PartnershipID
+SET @new_partnership_id = (SELECT PartnershipID 
+                           FROM partnership 
+                           WHERE StartDate = '2025-09-01' AND TotalInvestment = 345000.00);
+
+-- Step 2: Update delivered units for sparkling single glass bottle
 UPDATE partnershipproduct
-SET TotalUnitDelivered = 0
+SET TotalUnitDelivered = 1000
 WHERE PartnershipID = @new_partnership_id
-  AND ProductNo IN (33, 34);
+  AND ProductNo = 33;  -- sparkling, single bottle
 
