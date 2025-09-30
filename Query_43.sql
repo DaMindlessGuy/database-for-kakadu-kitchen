@@ -1,7 +1,7 @@
 -- Oliver will work from here
 -- 1. 
 
-SELECT Name, Phone, StreetNo, StreetName, City, State ,PostCode  FROM `partner` 
+SELECT Name, Phone, CONCAT(StreetNo, ' ', StreetName, ' ', City, State, ' ', PostCode) as Address  FROM `partner` 
 
 -- 2. 
 -- Joins the product and sourcetype table and selects products where the SrcTypeID = 2 (The id of Kakadu National Park)... -- edit by Patrick
