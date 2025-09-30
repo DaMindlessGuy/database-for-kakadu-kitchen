@@ -1,4 +1,5 @@
 CREATE DATABASE IF NOT EXISTS `kkitchen_43`;
+USE `kkitchen_43`;
 
 CREATE TABLE `packagingtype` (
   `PackageTypeID` char(3) NOT NULL PRIMARY KEY,
