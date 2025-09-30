@@ -1,7 +1,7 @@
 CREATE DATABASE IF NOT EXISTS `kkitchen_43`;
 
 CREATE TABLE `packagingtype` (
-  `PackagingTypeID` char(3) NOT NULL PRIMARY KEY,
+  `PackageTypeID` char(3) NOT NULL PRIMARY KEY,
   `Description` varchar(60) NOT NULL
 );
 
@@ -60,7 +60,7 @@ CREATE TABLE `product` (
   `Price` decimal(5,2) NOT NULL,
   FOREIGN KEY (`ProdTypeID`) REFERENCES producttype(ProductTypeID),
   FOREIGN KEY (`SrcTypeID`) REFERENCES sourcetype(SourceTypeID),
-  FOREIGN KEY (`PackTypeID`) REFERENCES packagingtype(PackagingTypeID)
+  FOREIGN KEY (`PackTypeID`) REFERENCES packagingtype(PackageTypeID)
 );
 
 CREATE TABLE `partnershipproduct` (
