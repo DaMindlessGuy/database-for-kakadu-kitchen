@@ -1,28 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Sep 23, 2025 at 05:07 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `kkitchen_43`
---
-
--- --------------------------------------------------------
-
 INSERT INTO `partnertype` (`PartnerTypeID`, `Description`) VALUES
 ('PO', 'Producer only '),
 ('PR', 'Producer and retailer'),
@@ -70,7 +45,7 @@ INSERT INTO `sourcetype` (`SourceTypeID`, `Description`) VALUES
 (4, 'Capricorn Coast aquifer '),
 (5, 'Yarra Ranges aquifer ');
 
-INSERT INTO `packagingtype` (`PackagingTypeID`, `Description`) VALUES
+INSERT INTO `packagingtype` (`PackageTypeID`, `Description`) VALUES
 ('GOP', 'Glass bottle with cork cap (pack of 6)'),
 ('GOS', 'Glass bottle with cork cap (single) '),
 ('GRP', 'Glass bottle with crown cap (pack of 6)'),
@@ -116,8 +91,6 @@ INSERT INTO `product` (`ProductNo`, `Name`, `Description`, `ProdTypeID`, `SrcTyp
 (34, 'Kakadu An-marabula Bellini', 'Native Peach Bellini, non-alcoholic spirit alternative ', 'SNP', 2, 'GOP', 'Native peach nectar, botanical extracts, dealcoholized wine, natural flavours, colours, sparkling water, citric acid, vegetable glycerine, potassium sorbate and sugar', '4,500ml', 66.99);
 
 INSERT INTO `partnershipproduct` (`PartnershipProductID`, `ProductNo`, `PartnershipID`, `TotalUnitAgreed`, `TotalUnitDelivered`) VALUES
--- ('PartnershipProductID', 'ProductNo', 'PartnerID', 'TotalUnitAgreed', 'TotalUnitDelivered'),
--- ('', '', '', '', ''),
 (1 , 1,  1,    100000.00, 33335),
 (2 , 2,  1,    100000.00, 24444),
 (3 , 3,  1,    130000.00, 24000),
@@ -167,11 +140,4 @@ INSERT INTO `partnershipproduct` (`PartnershipProductID`, `ProductNo`, `Partners
 (47, 16, NULL, 5000.00,   0),
 (48, 17, NULL, 2000.00,   0);
 
-
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
