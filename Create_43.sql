@@ -6,6 +6,11 @@ CREATE TABLE `packagingtype` (
   `Description` varchar(60) NOT NULL
 );
 
+CREATE TABLE `partnertype` (
+  `PartnerTypeID` char(2) NOT NULL PRIMARY KEY,
+  `Description` varchar(30) NOT NULL
+);
+
 CREATE TABLE `partner` (
   `PartnerID` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT, 
   `Name` varchar(50) NOT NULL,
@@ -15,7 +20,8 @@ CREATE TABLE `partner` (
   `StreetName` varchar(40) NOT NULL,
   `City` varchar(30) NOT NULL,
   `State` varchar(3) NOT NULL,
-  `PostCode` char(4) NOT NULL
+  `PostCode` char(4) NOT NULL,
+  FOREIGN KEY (`TypeID`) REFERENCES partnertype(PartnerTypeID)
 ); 
 
 CREATE TABLE `partnership` (
@@ -32,11 +38,6 @@ CREATE TABLE `partnerpartnership` (
   `PartnerSaleShare` decimal(5,2) NOT NULL,
   FOREIGN KEY (`PartnerID`) REFERENCES partner(PartnerID),
   FOREIGN KEY (`PartnershipID`) REFERENCES partnership(PartnershipID)
-);
-
-CREATE TABLE `partnertype` (
-  `PartnerTypeID` char(2) NOT NULL PRIMARY KEY,
-  `Description` varchar(30) NOT NULL
 );
 
 CREATE TABLE `producttype` (
