@@ -39,33 +39,30 @@ WHERE TotalUnitDelivered = 0 and ProductTypeID = "SLC" or ProductTypeID = "SLP" 
 
 -- 6. 
 
-SELECT partnerpartnership.PartnershipID, partner.PartnerID, partner.Name
-FROM `partnerpartnership`
-JOIN partner 
+SELECT partnerpartnership.PartnershipID, partner.PartnerID, partner.Name, partnerpartnership.PartnerInvShare, partnerpartnership.PartnerSaleShare
+FROM partnerpartnership 
+JOIN partner
 ON partnerpartnership.PartnerID = partner.PartnerID
 WHERE partnerpartnership.PartnershipID IN (
-    SELECT partnerpartnership.PartnershipID
-    FROM partnerpartnership
-    JOIN partner 
-        ON partnerpartnership.PartnerID = partner.PartnerID
-    GROUP BY partnerpartnership.PartnershipID
-    HAVING SUM(partner.Name = 'Kakadu Kitchen') = 1
-       AND COUNT(DISTINCT partner.PartnerID) = 3
-)
+        SELECT PartnershipID
+        FROM partnerpartnership
+        GROUP BY PartnershipID
+        HAVING COUNT(PartnerID) = 2
+    )
 ORDER BY partnerpartnership.PartnershipID, partner.PartnerID;
+
 
 -- 7.
 
 SELECT partnershipproduct.ProductNo,
     COUNT(DISTINCT partnershipproduct.PartnershipID) AS NumPartnerships,
-    SUM(partnershipproduct.TotalUnitAgreed) AS TotalUnitsAgreed,
-    SUM(partnershipproduct.TotalUnitDelivered) AS TotalUnitsDelivered
+    SUM(DISTINCT partnershipproduct.TotalUnitAgreed) AS TotalUnitsAgreed,
+    SUM(DISTINCT partnershipproduct.TotalUnitDelivered) AS TotalUnitsDelivered
 FROM partnershipproduct
 JOIN partnerpartnership 
-    ON partnershipproduct.PartnershipID = partnerpartnership.PartnershipID
+ON partnershipproduct.PartnershipID = partnerpartnership.PartnershipID
 JOIN partner 
-    ON partnerpartnership.PartnerID = partner.PartnerID
-WHERE partner.Name <> 'Kakadu Kitchen'
+ON partnerpartnership.PartnerID = partner.PartnerID
 GROUP BY partnershipproduct.ProductNo
 HAVING COUNT(DISTINCT partnershipproduct.PartnershipID) > 1;
 
@@ -77,15 +74,20 @@ SELECT
     product.Name AS ProductName,
     partnershipproduct.TotalUnitAgreed,
     partnershipproduct.TotalUnitDelivered,
-    (partnershipproduct.TotalUnitDelivered * product.Price * partnerpartnership.PartnerSaleShare / 100) AS SaleShareDollar
+    
+    CONCAT('$', partnershipproduct.TotalUnitDelivered * product.Price * partnerpartnership.PartnerSaleShare / 100) AS SaleShareDollar
 FROM partner
-JOIN partnerpartnership 
-    ON partner.PartnerID = partnerpartnership.PartnerID
+
+JOIN partnerpartnership
+ON partner.PartnerID = partnerpartnership.PartnerID
+
 JOIN partnershipproduct 
-    ON partnerpartnership.PartnershipID = partnershipproduct.PartnershipID
+ON partnerpartnership.PartnershipID = partnershipproduct.PartnershipID
+
 JOIN product 
-    ON partnershipproduct.ProductNo = product.ProductNo
+ON partnershipproduct.ProductNo = product.ProductNo
+
 WHERE partner.Name = 'First Nations-owned company'
-ORDER BY partnershippartnership.PartnershipID, partnershipproduct.ProductNo;
+ORDER BY partnerpartnership.PartnershipID, partnershipproduct.ProductNo;
 
 
