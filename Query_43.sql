@@ -29,7 +29,7 @@ ORDER BY total_products DESC;
 -- Patrick will work from here
 -- 5. 
 
-SELECT Name, ProductTypeID, Amount, Price
+SELECT Name, ProductTypeID, Amount, CONCAT('$', Price) AS Price
 FROM `partnershipproduct`
 INNER JOIN `product`
 ON partnershipproduct.ProductNo = product.ProductNo
@@ -54,17 +54,17 @@ ORDER BY partnerpartnership.PartnershipID, partner.PartnerID;
 
 -- 7.
 
-SELECT partnershipproduct.ProductNo,
-    COUNT(DISTINCT partnershipproduct.PartnershipID) AS NumPartnerships,
-    SUM(DISTINCT partnershipproduct.TotalUnitAgreed) AS TotalUnitsAgreed,
-    SUM(DISTINCT partnershipproduct.TotalUnitDelivered) AS TotalUnitsDelivered
-FROM partnershipproduct
-JOIN partnerpartnership 
-ON partnershipproduct.PartnershipID = partnerpartnership.PartnershipID
-JOIN partner 
+SELECT partnerpartnership.PartnershipID, partner.PartnerID, partner.Name, CONCAT('$', partnerpartnership.PartnerInvShare) AS PartnerInvShare, CONCAT(partnerpartnership.PartnerSaleShare, '%') AS PartnerSaleShare
+FROM partnerpartnership 
+JOIN partner
 ON partnerpartnership.PartnerID = partner.PartnerID
-GROUP BY partnershipproduct.ProductNo
-HAVING COUNT(DISTINCT partnershipproduct.PartnershipID) > 1;
+WHERE partnerpartnership.PartnershipID IN (
+        SELECT PartnershipID
+        FROM partnerpartnership
+        GROUP BY PartnershipID
+        HAVING COUNT(PartnerID) = 2
+    )
+ORDER BY partnerpartnership.PartnershipID, partner.PartnerID;
 
 -- 8. 
 
@@ -89,5 +89,6 @@ ON partnershipproduct.ProductNo = product.ProductNo
 
 WHERE partner.Name = 'First Nations-owned company'
 ORDER BY partnerpartnership.PartnershipID, partnershipproduct.ProductNo;
+
 
 
